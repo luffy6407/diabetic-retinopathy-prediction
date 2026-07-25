@@ -1044,11 +1044,7 @@ elif page == "Dataset & EDA":
         )
 
         st.dataframe(
-            correlation.style.background_gradient(
-                cmap="Blues",
-                vmin=-1,
-                vmax=1
-            ),
+            correlation,
             use_container_width=True
         )
 
@@ -1057,6 +1053,15 @@ elif page == "Dataset & EDA":
             "to ±1 indicate stronger linear relationships."
         )
 
+        # ----------------------------------------------------
+        # DATA QUALITY
+        # ----------------------------------------------------
+
+        st.markdown("---")
+
+        st.subheader(
+            "Data Quality Summary"
+        )
         # ----------------------------------------------------
         # DATA QUALITY
         # ----------------------------------------------------
@@ -1270,9 +1275,7 @@ elif page == "Model Performance":
     )
 
     st.dataframe(
-        confusion_df.style.background_gradient(
-            cmap="Blues"
-        ),
+        confusion_df,
         use_container_width=True
     )
 
